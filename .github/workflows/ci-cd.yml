@@ -63,5 +63,8 @@ jobs:
         tags: ${{ secrets.DOCKER_USERNAME }}/final:latest
 
     - name: Send Telegram notification
+      env:
+        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
         python3 telegram-bot.py "Build ${{ github.sha }} completed successfully!"
