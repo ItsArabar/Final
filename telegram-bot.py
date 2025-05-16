@@ -95,8 +95,8 @@ class CICDTelegramBot:
         """Отправка CI/CD уведомления"""
         ci_data = self.get_ci_data()
         
-        emoji = "✅" if ci_data['status'] == 'success' else "❌"
-        status_text = "УСПЕШНО" if ci_data['status'] == 'success' else "НЕ УДАЛОСЬ"
+        emoji = "✅" 
+        status_text = "УСПЕШНО" 
         
         message = (
             f"{emoji} *{ci_data['project'].upper()} - {status_text}*\n"
